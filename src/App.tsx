@@ -1,14 +1,8 @@
-import { useState } from 'react'
+import Home from './pages/home.tsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-
-    <div className='bg-teal-400'>
-        <p>hello</p>
-    </div>
-   
+    <Home />
   )
 }
 
