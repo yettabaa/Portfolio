@@ -15,6 +15,9 @@ export default {
       animation: {
         updown: 'updown 2s infinite ease-in-out',
       },
+      fontFamily: {
+        merriweather: ['Merriweather', 'serif'],
+      },
     },
   },
   plugins: [],
