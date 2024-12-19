@@ -3,15 +3,16 @@ import union from '../assets/union.svg';
 import picture from '../assets/yettabaa.jpg';
 import Header from './header';
 import Footer from './footer';
+import Projects from './projects';
 
-const Home = () => {
+const Home : React.FC = () => {
     return (
         <>
             <Header />
             <div className='h-screen flex flex-col  items-center pt-52 gap-10'>
                 <div className='flex flex-col items-center '>
                     <div className='text-white text-4xl font-bold font-merriweather'>Yassin Ettabaa</div>
-                    <div className='text-white text-4xl font-medium font-merriweather'
+                    <div className='text-4xl font-medium font-merriweather'
                          style={{color: 'var(--special-green)'}}>
                             Software Engineer
                     </div>
@@ -26,10 +27,14 @@ const Home = () => {
             </div>
 
 
-            <div className="flex flex-col gap-4">
-                <span className="text-white text-lg font-medium">About Me</span>
-                <span className="text-white text-lg font-medium">
-                    Hello again! Thanks for scrolling this far! 🤗 Just a heads up,
+            <div className="flex flex-col gap-4 p-8">
+                <span className="font-merriweather font-bold text-2xl"
+                        style={{color: 'var(--special-green)'}}
+                >
+                    About Me
+                </span>
+                <span className="font-merriweather font-normal text-white text-lg">
+                    Hello! Thanks for scrolling this far! 🤗 Just a heads up,
                     my portfolio is a little outdated at the moment.
                     I haven’t had time to update it, but I’m keeping it up for now,
                     and I hope it gives you some inspiration!
@@ -39,6 +44,10 @@ const Home = () => {
                     to me with any book recommendations!
                 </span>
             </div>
+
+
+
+            <Projects />
             <Footer />
         </>
     );

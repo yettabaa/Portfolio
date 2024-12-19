@@ -18,6 +18,10 @@ export default {
       fontFamily: {
         merriweather: ['Merriweather', 'serif'],
       },
+      colors: {
+        bg_color: '#020307',
+        special_green: '#01D5A2'
+      }
     },
   },
   plugins: [],

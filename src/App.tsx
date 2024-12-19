@@ -1,6 +1,6 @@
 import Home from './pages/home.tsx'
 
-function App() {
+const App : React.FC = () => {
   return (
     <Home />
   )
