@@ -20,27 +20,33 @@ const Projects : React.FC = () => {
     , []);
 
     return (
-        <>
-        {
-            repos.map((repo : Repo) => {
-                return (
-                    <div key={repo.id} className='flex flex-col gap-4 p-8'>
-                        <span className='font-merriweather font-bold text-2xl'
-                            style={{color: 'var(--special-green)'}}
-                            >
-                            {repo.name}
-                        </span>
-                        <span className='font-merriweather font-normal text-white text-lg'>
-                            {repo.description}
-                        </span>
-                        <a href={repo.html_url} className='font-merriweather font-normal text-white text-lg'>
-                            {repo.html_url}
-                        </a>
-                    </div>
-                );
-            })
-        }      
-        </>
+        <div id='projects' className='flex flex-col gap-4 p-8'>
+            <span className='font-merriweather font-bold text-2xl'
+                    style={{color: 'var(--special-green)'}}
+            >
+                About Me
+            </span>
+            
+            {
+                repos.map((repo : Repo) => {
+                    return (
+                        <div key={repo.id} className='flex flex-col gap-4 '>
+                            <span className='font-merriweather font-medium text-xl'
+                                style={{color: 'var(--special-green)'}}
+                                >
+                                {repo.name}
+                            </span>
+                            <span className='font-merriweather font-normal text-white text-lg'>
+                                {repo.description}
+                            </span>
+                            <a href={repo.html_url} className='font-merriweather font-normal text-white text-lg'>
+                                {repo.html_url}
+                            </a>
+                        </div>
+                    );
+                })
+            }      
+        </div>
     );
 }
 
