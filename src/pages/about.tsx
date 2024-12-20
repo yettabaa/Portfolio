@@ -1,9 +1,7 @@
 const About: React.FC = () => {
     return (
         <div id='about' className='flex flex-col gap-4 p-8' >
-            <span className='font-merriweather font-bold text-2xl'
-                    style={{color: 'var(--special-green)'}}
-            >
+            <span className='font-merriweather font-bold text-2xl text-_green'>
                 About Me
             </span>
             <span className='font-merriweather font-normal text-lg'>

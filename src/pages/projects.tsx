@@ -21,19 +21,14 @@ const Projects : React.FC = () => {
 
     return (
         <div id='projects' className='flex flex-col gap-4 p-8'>
-            <span className='font-merriweather font-bold text-2xl'
-                    style={{color: 'var(--special-green)'}}
-            >
-                About Me
+            <span className='font-merriweather font-bold text-2xl text-_green'>
+                Projects
             </span>
-            
             {
                 repos.map((repo : Repo) => {
                     return (
                         <div key={repo.id} className='flex flex-col gap-4 '>
-                            <span className='font-merriweather font-medium text-xl'
-                                style={{color: 'var(--special-green)'}}
-                                >
+                            <span className='font-merriweather font-medium text-xl text-_green'>
                                 {repo.name}
                             </span>
                             <span className='font-merriweather font-normal text-white text-lg'>

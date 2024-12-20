@@ -19,8 +19,8 @@ export default {
         merriweather: ['Merriweather', 'serif'],
       },
       colors: {
-        bg_color: '#020307',
-        special_green: '#01D5A2',
+        bg: '#020307',
+        _green: '#01D5A2',
         footer: '#000B08',
       }
     },
