@@ -9,6 +9,7 @@ interface Repo {
     name: string;
     description: string | null;
     html_url: string;
+    language: string[] | string | null;
 }
 
 const Projects : React.FC = () => {
@@ -24,7 +25,7 @@ const Projects : React.FC = () => {
         fetch('https://api.github.com/users/yettabaa/repos')
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setRepos(data)
             });
     }
@@ -33,6 +34,7 @@ const Projects : React.FC = () => {
     let withGif:Repo[] = [];
     let withoutGif:Repo[] = [];
     repos.forEach((repo: Repo) => {
+        console.log('language', (repo.language))
         if (repo.name === 'Bac-Note-Calculator' || repo.name === 'FdF'
             || repo.name === 'cub3D' || repo.name === 'Inception') {
             withGif.push(repo);
@@ -46,21 +48,36 @@ const Projects : React.FC = () => {
             <span className='font-merriweather font-bold text-2xl text-_green pb-4'>
                 Projects
             </span>
-            <div className='flex flex-col gap-10'>
+            <div className=' flex flex-col gap-10'>
                 {
                     withGif.map((repo : Repo) => {
                         return (
-                            <div key={repo.id} className='flex flex-col gap-4 rounded-md overflow-hidden border-2 border-gray-500'>
-                                <img src={gifs[repo.name]} alt="instagram" className=" h-60 w-auto" />
-                                {/* <span className='font-merriweather font-medium text-xl text-_green'>
-                                    {repo.name}
+                            <div key={repo.id} className='relative group flex flex-col gap-4 rounded-md overflow-hidden border-2 border-gray-500'>
+                                <img src={gifs[repo.name]} alt="instagram" className=" h-72 w-auto" />
+                                <div className="h-72 absolute p-2 inset-0 bg-slate-500 bg-opacity-70 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span className='font-merriweather w-full text-center font-bold text-xl text-_green'>
+                                        {repo.name}
                                     </span>
-                                    <span className='font-merriweather font-normal text-white text-lg'>
-                                    {repo.description}
-                                    </span>
-                                    <a href={repo.html_url} className='font-merriweather font-normal text-white text-lg'>
-                                    {repo.html_url}
-                                    </a> */}
+                                    <p className="font-merriweather font-bold text-sm mb-2 w-full text-center">
+                                        {repo.description || "No description available"}
+                                    </p>
+                                    <div className='absolute bottom-2 flex flex-col gap-2 w-full'>
+                                        <div className='flex  items-center gap-2 w-full'>
+                                            <div className='bg-_green w-[10px] h-[10px] rounded-full'></div>
+                                            <span className='font-merriweather font-bold text-md '>
+                                                {repo.language}
+                                            </span>
+                                        </div>
+                                        <a 
+                                            href={repo.html_url} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="bg-_green w-1/2 text-bg text-center font-merriweather font-medium py-2 rounded-md hover:bg-green-600 transition-colors duration-300"
+                                            >
+                                            View on GitHub
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         );
                     })
@@ -87,16 +104,34 @@ const Projects : React.FC = () => {
 
                     showMore && withoutGif.map((repo: Repo) => {
                         return (
-                            <div key={repo.id} className='flex flex-col gap-4 rounded-md overflow-hidden border-2 border-gray-500'>
-                                <span className='font-merriweather font-medium text-xl text-_green'>
+                            <div key={repo.id} className='relative group flex flex-col justify-center items-center gap-4 rounded-md h-48 overflow-hidden border-2 border-gray-500'>
+                                <span className='font-merriweather font-bold text-3xl text-_green text-center'>
                                     {repo.name}
                                 </span>
-                                <span className='font-merriweather font-normal text-white text-lg'>
-                                    {repo.description}
-                                </span>
-                                <a href={repo.html_url} className='font-merriweather font-normal text-white text-lg'>
-                                    {repo.html_url}
-                                </a>
+                                <div className="h-48 absolute p-2 inset-0 bg-slate-500 bg-opacity-70 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span className='font-merriweather w-full text-center font-bold text-xl text-_green'>
+                                        {repo.name}
+                                    </span>
+                                    <p className="font-merriweather font-bold text-sm mb-2 w-full text-center">
+                                        {repo.description || "No description available"}
+                                    </p>
+                                    <div className='absolute bottom-2 flex flex-col gap-2 w-full'>
+                                        <div className='flex  items-center gap-2 w-full'>
+                                            <div className='bg-_green w-[10px] h-[10px] rounded-full'></div>
+                                            <span className='font-merriweather font-bold text-md '>
+                                                {repo.language}
+                                            </span>
+                                        </div>
+                                        <a 
+                                            href={repo.html_url} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            className="bg-_green w-1/2 text-bg text-center font-merriweather font-medium py-2 rounded-md hover:bg-green-600 transition-colors duration-300"
+                                            >
+                                            View on GitHub
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         );
                     })
