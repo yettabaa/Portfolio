@@ -18,10 +18,10 @@ const footer = () => {
     };
   return (
 
-    <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm p-8 ">
-        <div className='flex flex-col sm:flex-row gap-8'>
+    <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm w-full mt-32 p-8 items-center flex flex-col">
+        <div className='flex flex-col sm:flex-row gap-16 max-w-6xl'>
             <div className='p-1 flex flex-col items-center gap-8 w-full sm:w-[50%]'>
-                <p className="font-merriweather font-bold text-2xl text-_green mr-auto "
+                <p className="font-merriweather font-bold text-4xl text-_green mr-auto "
                     >Contact Me</p>
                 <p className='font-merriweather font-normal text-lg'>
                     If you ever want to grab a coffee/bubble tea (virtually) or just want a quick 
