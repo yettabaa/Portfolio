@@ -10,7 +10,7 @@ const Home : React.FC = () => {
     return (
         <div className='flex flex-col items-center'>
             <Header />
-            <div className='h-screen flex flex-col items-center pt-[25vh] gap-10 z-0'>
+            <div className='h-screen flex flex-col items-center pt-[18vh] sm:pt-[25vh] gap-10 z-0'>
                 <div className='flex flex-col items-center '>
                     <div className='text-4xl font-bold font-merriweather'>Yassin Ettabaa</div>
                     <div className='text-4xl font-medium font-merriweather text-_green'>
