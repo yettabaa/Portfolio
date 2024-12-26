@@ -4,28 +4,54 @@ import instagram from '../assets/instagram.svg';
 import React, { useState } from 'react';
 
 const footer = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [emailError, setEmailError] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+        if (name === "email") {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            setEmailError(!emailRegex.test(value));
+        }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // You can integrate an email service like EmailJS here
-        console.log(formData);
+    
+        if (emailError) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+    
+        try {
+            const response = await fetch("https://formsubmit.co/9fd25ace48441795df46ec0ecb5c9936", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+    
+            if (response.ok) {
+                alert("Message sent successfully!");
+                setFormData({ name: "", email: "", message: "" }); // Clear form
+            } else {
+                alert("Failed to send the message. Please try again.");
+            }
+        } catch (error) {
+            alert("An error occurred. Please try again later.");
+        }
     };
-  return (
+    return (
 
     <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm w-full mt-32 p-8 items-center flex flex-col">
         <div className='flex flex-col sm:flex-row gap-16 max-w-6xl'>
             <div className='p-1 flex flex-col items-center gap-8 w-full sm:w-[50%]'>
                 <p className="font-merriweather font-bold text-4xl text-_green mr-auto "
                     >Contact Me</p>
-                <p className='font-merriweather font-normal text-lg'>
-                    If you ever want to grab a coffee/bubble tea (virtually) or just want a quick 
-                    chat - you can find me on social media or you can send me a message here!
+                <p className="text-lg font-medium font-merriweather">
+                    I’m always open to connecting, whether it’s to collaborate on exciting projects, share knowledge, or discuss industry trends. If you’re interested in working together or just want to say hello, feel free to reach out through any of the following channels.
                 </p>
                 <ul className="flex justify-center gap-[20vw] sm:gap-[6vw]">
                     <li>
@@ -45,7 +71,9 @@ const footer = () => {
                     </li>
                 </ul>
             </div>
-            <form onSubmit={handleSubmit} className="flex flex-col items-center w-full gap-4 mt-4">
+            <form className="flex flex-col items-center w-full gap-4 sm:mt-20"
+                    onSubmit={handleSubmit}  
+            >
                 <input
                     type="text"
                     name="name"
@@ -60,7 +88,9 @@ const footer = () => {
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="p-2 border-2 rounded-md border-_green  bg-gray-800 w-full"
+                    className={`p-2 border-2 rounded-md bg-gray-800 w-full ${
+                        emailError ? "border-red-500" : "border-_green"} `}
+                    required
                     />
                 <textarea
                     name="message"
@@ -68,6 +98,7 @@ const footer = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="p-2 border-2 h-40 rounded-md border-_green bg-gray-800 w-full"
+                    required
                     ></textarea>
                 <button
                     type="submit"
@@ -81,7 +112,7 @@ const footer = () => {
             &copy; {new Date().getFullYear()} Ettabaa Yassin. All rights reserved.
         </p>
     </footer>
-  );
+    );
 };
 
 export default footer;

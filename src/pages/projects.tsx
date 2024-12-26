@@ -25,7 +25,6 @@ const Projects : React.FC = () => {
         fetch('https://api.github.com/users/yettabaa/repos')
             .then(response => response.json())
             .then(data => {
-                // console.log(data)
                 setRepos(data)
             });
     }
@@ -34,7 +33,6 @@ const Projects : React.FC = () => {
     let withGif:Repo[] = [];
     let withoutGif:Repo[] = [];
     repos.forEach((repo: Repo) => {
-        console.log('language', (repo.language))
         if (repo.name === 'Bac-Note-Calculator' || repo.name === 'FdF'
             || repo.name === 'cub3D' || repo.name === 'Inception') {
             withGif.push(repo);
