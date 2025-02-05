@@ -3,6 +3,7 @@ import FdF from '../assets/FdF-Scale-Z.gif';
 import cub3D from '../assets/cub3D_1.gif';
 import inception from '../assets/schema.png';
 import bacNote from '../assets/Bac-Note-Calculator.gif';
+import transc from '../assets/ft_transcendence2.png';
 
 interface Repo {
     id: number; // Assuming 'id' is a unique identifier
@@ -19,7 +20,8 @@ const Projects : React.FC = () => {
         'FdF': FdF,
         'cub3D': cub3D,
         'Inception': inception,
-        'Bac-Note-Calculator': bacNote
+        'Bac-Note-Calculator': bacNote,
+        'ft_transcendence':transc,
     }
     useEffect(() => {
         fetch('https://api.github.com/users/yettabaa/repos')
@@ -34,7 +36,8 @@ const Projects : React.FC = () => {
     let withoutGif:Repo[] = [];
     repos.forEach((repo: Repo) => {
         if (repo.name === 'Bac-Note-Calculator' || repo.name === 'FdF'
-            || repo.name === 'cub3D' || repo.name === 'Inception') {
+            || repo.name === 'cub3D' || repo.name === 'Inception' || repo.name === 'ft_transcendence') {
+            console.log('name',repo.name);
             withGif.push(repo);
         } else if (repo.name !== 'yettabaa') {
             withoutGif.push(repo);
