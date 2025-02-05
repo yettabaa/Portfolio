@@ -23,6 +23,15 @@ const Projects : React.FC = () => {
         'Bac-Note-Calculator': bacNote,
         'ft_transcendence':transc,
     }
+
+    const orderedProjectsWithGif: string[] = [
+        'ft_transcendence',
+        'Bac-Note-Calculator',
+        'Inception',
+        'cub3D',
+        'FdF',
+    ];
+
     useEffect(() => {
         fetch('https://api.github.com/users/yettabaa/repos')
             .then(response => response.json())
@@ -35,13 +44,17 @@ const Projects : React.FC = () => {
     let withGif:Repo[] = [];
     let withoutGif:Repo[] = [];
     repos.forEach((repo: Repo) => {
-        if (repo.name === 'Bac-Note-Calculator' || repo.name === 'FdF'
-            || repo.name === 'cub3D' || repo.name === 'Inception' || repo.name === 'ft_transcendence') {
-            console.log('name',repo.name);
+        if (orderedProjectsWithGif.includes(repo.name))  {
             withGif.push(repo);
         } else if (repo.name !== 'yettabaa') {
             withoutGif.push(repo);
         }
+    });
+
+    withGif.sort((a, b) => {
+        const indexA = orderedProjectsWithGif.indexOf(a.name);
+        const indexB = orderedProjectsWithGif.indexOf(b.name);
+        return indexA - indexB;
     });
 
     return (
