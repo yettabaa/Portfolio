@@ -4,6 +4,7 @@ import cub3D from '../assets/cub3D_1.gif';
 import inception from '../assets/schema.png';
 import bacNote from '../assets/Bac-Note-Calculator.gif';
 import transc from '../assets/ft_transcendence2.png';
+import http from '../assets/http.jpeg';
 
 interface Repo {
     id: number; // Assuming 'id' is a unique identifier
@@ -22,11 +23,13 @@ const Projects : React.FC = () => {
         'Inception': inception,
         'Bac-Note-Calculator': bacNote,
         'ft_transcendence':transc,
+        'webserv': http,
     }
 
     const orderedProjectsWithGif: string[] = [
         'ft_transcendence',
         'Bac-Note-Calculator',
+        'webserv',
         'Inception',
         'cub3D',
         'FdF',
@@ -58,16 +61,16 @@ const Projects : React.FC = () => {
     });
 
     return (
-        <div id='projects' className='flex flex-col gap-10 mt-20 p-8 max-w-6xl'>
-            <span className='font-merriweather font-bold text-4xl text-_green pb-4'>
+        <div id='projects' className='flex flex-col gap-10 mt-20 p- max-w-6xl'>
+            <span className='font-merriweather font-bold text-4xl text-_green pb-4 p-8'>
                 Projects
             </span>
-            <div className=' flex flex-col gap-12 sm:flex-row sm:justify-between sm:flex-wrap'>
+            <div className=' flex flex-col gap-12 sm:flex-row sm:justify-between sm:flex-wrap p-2 sm:p-8'>
             {
                 withGif.map((repo : Repo) => {
                     return (
                         <div key={repo.id} className='sm:w-[46%] relative group flex flex-col gap-4 rounded-md overflow-hidden border-2 border-gray-500'>
-                            <img src={gifs[repo.name]} alt="instagram" className=" h-72 w-auto" />
+                            <img src={gifs[repo.name]} alt={repo.name} className=" h-72 w-auto" />
                             <div className="h-72 absolute p-2 inset-0 bg-slate-500 bg-opacity-70 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <span className='font-merriweather w-full text-center font-bold text-xl text-_green'>
                                     {repo.name}
