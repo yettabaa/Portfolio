@@ -49,6 +49,7 @@ const Projects : React.FC = () => {
     repos.forEach((repo: Repo) => {
         if (orderedProjectsWithGif.includes(repo.name))  {
             withGif.push(repo);
+            console.log(repo.name, repo.language);
         } else if (repo.name !== 'yettabaa') {
             withoutGif.push(repo);
         }

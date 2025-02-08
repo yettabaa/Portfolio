@@ -11,7 +11,7 @@ const About: React.FC = () => {
                 I’ve gained expertise in low-level programming (C/C++), providing me with a solid understanding of memory management, algorithms, and systems programming. This strong technical foundation allows me to adapt quickly to new frameworks, languages, and emerging technologies.
             </p>
             <p className="text-lg font-medium font-merriweather mb-6">
-                What sets me apart is my background in Economics and Business Management, which gives me a unique approach to problem-solving—balancing technical solutions with strategic business insights. I’m driven by the opportunity to work on projects that solve real-world problems and make a meaningful impact.
+                What sets me apart is my background in Economics and Business Management, which gives me a unique approach to problem-solving balancing technical solutions with strategic business insights. I’m driven by the opportunity to work on projects that solve real-world problems and make a meaningful impact.
             </p>
             <p className="text-lg font-medium font-merriweather mb-6">
                 I’m always eager to learn, grow, and contribute to innovative projects across various domains in computer science. Let’s build something amazing together!
