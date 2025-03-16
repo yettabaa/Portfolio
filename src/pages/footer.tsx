@@ -48,9 +48,9 @@ const footer = () => {
     <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm w-full mt-32 p-8 items-center flex flex-col">
         <div className='flex flex-col sm:flex-row gap-16 max-w-6xl'>
             <div className='p-1 flex flex-col items-center gap-8 w-full sm:w-[50%]'>
-                <p className="font-merriweather font-bold text-4xl text-_green mr-auto "
+                <p className="font-bold text-4xl text-_green mr-auto "
                     >Contact Me</p>
-                <p className="text-lg font-medium font-merriweather">
+                <p className="text-lg font-medium" >
                     I’m always open to connecting, whether it’s to collaborate on exciting projects, share knowledge, or discuss industry trends. If you’re interested in working together or just want to say hello, feel free to reach out through any of the following channels.
                 </p>
                 <ul className="flex justify-center gap-[20vw] sm:gap-[6vw]">
@@ -102,13 +102,13 @@ const footer = () => {
                     ></textarea>
                 <button
                     type="submit"
-                    className="w-40 bg-_green font-merriweather font-bold text-xl py-2 px-4 mr-auto rounded-md hover:bg-green-600"
+                    className="w-40 bg-_green font-bold text-xl py-2 px-4 mr-auto rounded-md hover:bg-green-600"
                     >
                     Send
                 </button>
             </form>
         </div>
-        <p className="font-merriweather text-center text-sm pt-8">
+        <p className="text-center text-sm pt-8">
             &copy; {new Date().getFullYear()} Ettabaa Yassin. All rights reserved.
         </p>
     </footer>
