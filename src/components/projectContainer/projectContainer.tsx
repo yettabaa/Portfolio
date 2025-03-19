@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import FdF from '../../assets/FdF-Scale-Z.gif';
 import cub3D from '../../assets/cub3D_1.gif';
 import inception from '../../assets/schema.png';
@@ -6,7 +7,6 @@ import transc from '../../assets/ft_transcendence2.png';
 import http from '../../assets/http.jpeg';
 import AHouseGuru from '../../assets/A-House-Guru.png';
 import volenteer from '../../assets/volunteer-travel.png';
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export interface Repo {
@@ -89,7 +89,12 @@ const LanguagesBox = ({languages_url, html_url}:{languages_url: string, html_url
     )
 }
 
-const ProjectContainer  = ({repos, showMore=false} : {repos: Repo[], showMore?:Boolean}) => {
+interface ProjectContainerProps {
+    repos: Repo[];
+    showMore?: boolean;
+}
+
+const ProjectContainer : React.FC<ProjectContainerProps>  = ({repos, showMore=false}) => {
     const gifs : any = {
         'FdF': FdF,
         'cub3D': cub3D,
