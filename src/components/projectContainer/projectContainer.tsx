@@ -18,6 +18,7 @@ export interface Repo {
     preview: string;
 }
 
+// https://raw.githubusercontent.com/ozh/github-colors/master/colors.json
 const languagesColors : any= {
     'Python': '#3572A5',    
     'TypeScript': '#3178c6',    
@@ -34,6 +35,7 @@ const languagesColors : any= {
     'C': '#555555',
     'Roff': '#ecdebe',
     'SCSS': '#c6538c',
+    'Batchfile': '#C1F12E',
 }
 
 // let _set = new Set<string>();
