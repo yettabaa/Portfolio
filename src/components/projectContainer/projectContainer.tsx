@@ -4,6 +4,8 @@ import inception from '../../assets/schema.png';
 import bacNote from '../../assets/Bac-Note-Calculator.gif';
 import transc from '../../assets/ft_transcendence2.png';
 import http from '../../assets/http.jpeg';
+import AHouseGuru from '../../assets/A-House-Guru.png';
+import volenteer from '../../assets/volunteer-travel.png';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -12,19 +14,40 @@ export interface Repo {
     name: string;
     description: string | null;
     html_url: string;
-    language: string[] | string | null;
     languages_url: string;
+    preview: string;
 }
 
-const LanguagesBox = ({languages_url}:{languages_url: string}) => {
-    const [languages, setLanguages] = useState<string[]>([]);
+const languagesColors : any= {
+    'Python': '#3572A5',    
+    'TypeScript': '#3178c6',    
+    'JavaScript': '#f1e05a',    
+    'HTML': '#e34c26',
+    'CSS': '#663399',
+    'Dockerfile': '#384d54',
+    'C++': '#f34b7d',
+    'Makefile': '#427819',
+    'Perl': '#0298c3',
+    'PHP': '#4F5D95',
+    'Ruby': '#701516',
+    'Shell': '#89e051',
+    'C': '#555555',
+    'Roff': '#ecdebe',
+}
+
+// let _set = new Set<string>();
+const LanguagesBox = ({languages_url, html_url}:{languages_url: string, html_url:string}) => {
+    const [languages, setLanguages] = useState<{[key:string]: number}>({});
     const [total, setTotal] = useState<number>(0);
-    const GITHUB_TOKEN = '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'
+
 
     useEffect(() => {
+        const token = html_url ? import.meta.env.VITE_GITHUB_TOKEN : import.meta.env.VITE_PRIVATE_GITHUB_TOKEN;
+        console.log(html_url, token);
+        console.log(languages_url);
         axios.get(languages_url, {
             headers: {
-                'Authorization': `token ${GITHUB_TOKEN}`
+                'Authorization': `token ${token}`,
             }
         })
         .then((response) => {
@@ -35,21 +58,24 @@ const LanguagesBox = ({languages_url}:{languages_url: string}) => {
             console.error('An error occured while fetching the languages', error);
         });
     }, []);
-    console.log('languages', languages);
-    console.log('total', total);
+    // Object.keys(languages).forEach((key) => {
+    //     _set.add(key);
+    // });
+    // console.log(_set);
+
     return (
         <>
-            <ul className='flex gap-2'>
+            <ul className='flex flex-wrap items-center gap-4 overflow-ellipsis'>
                 {
-                    Object.entries(languages).map(([key, value] : [string, string]) => {
+                    Object.entries(languages).map(([key, value]) => {
                         return (
-                            <li key={key} className='flex '>
-                                <div className='bg-_green w-[10px] h-[10px] rounded-full'></div>
-                                <p className='font-merriweather font-bold text-md'>
+                            <li key={key} className='flex gap-1 items-center'>
+                                <div className='w-[10px] h-[10px] rounded-full mr-2'  style={{ backgroundColor: languagesColors[key] }} ></div>
+                                <p className='font-sans font-bold text-sm'>
                                     {key}
                                 </p>
-                                <p>
-                                    {((parseInt(value) / total) * 100).toFixed(1)}%
+                                <p className='font-sans font-medium text-sm text-neutral-300'>
+                                    {((value / total) * 100).toFixed(1)}%
                                 </p>
                             </li>
                         );
@@ -68,6 +94,8 @@ const ProjectContainer  = ({repos, showMore=false} : {repos: Repo[], showMore?:B
         'Bac-Note-Calculator': bacNote,
         'ft_transcendence':transc,
         'webserv': http,
+        'A-House-Guru': AHouseGuru,
+        'volunteer-travel': volenteer,
     }
 
     return (
@@ -76,30 +104,31 @@ const ProjectContainer  = ({repos, showMore=false} : {repos: Repo[], showMore?:B
             repos.map((repo : Repo) => {
                 return (
                     // <ProjectContainer repo={repo}/>
-                    <div key={repo.id} className={`sm:w-[46%] relative group flex flex-col  justify-center gap-4 rounded-md overflow-hidden border-2 border-gray-500 ${showMore ? 'items-center h-64' : ''}`}>
-                        {gifs[repo?.name] ? 
+                    <div key={repo.id} className={`sm:w-[46%] relative group flex flex-col  justify-center gap-4 rounded-lg overflow-hidden  ${showMore ? 'items-center h-64' : ''}`}>
+                        {
+                            gifs[repo?.name] ? 
                             <img src={gifs[repo.name]} alt={repo.name} className=" h-72 w-auto" />
                             :
-                            <span className='font-merriweather font-bold text-3xl text-_green text-center'>
+                            <span className='font-bold text-3xl text-_green text-center'>
                                 {repo.name}
                             </span>
                         }
                         <div className={`absolute p-2 inset-0 bg-slate-500 bg-opacity-70 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${showMore ? 'h-64' : 'h-72 '}`}>
-                            <span className='font-merriweather w-full text-center font-bold text-xl text-_green'>
+                            <span className='w-full text-center font-bold text-xl text-_green'>
                                 {repo.name}
                             </span>
-                            <p className="font-merriweather font-bold text-sm mb-2 w-full text-center">
+                            <p className="font-bold text-sm mb-2 w-full text-center">
                                 {repo.description || "No description available"}
                             </p>
                             <div className='absolute bottom-2 flex flex-col gap-2 w-full'>
-                                <LanguagesBox languages_url={repo.languages_url}/>   
+                                <LanguagesBox languages_url={repo.languages_url} html_url={repo.html_url}/>   
                                 <a 
-                                    href={repo.html_url} 
+                                    href={(repo.html_url) ? repo.html_url : repo.preview} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="bg-_green w-1/2 text-bg text-center font-merriweather font-medium py-2 rounded-md hover:bg-green-600 transition-colors duration-300"
+                                    className="bg-_green w-1/2 text-bg text-center font-medium py-2 rounded-md hover:bg-green-600 transition-colors duration-300"
                                     >
-                                    View on GitHub
+                                    {(repo.html_url) ?  'View on GitHub' : 'Preview'}
                                 </a>
                             </div>
                         </div>

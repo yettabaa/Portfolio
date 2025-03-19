@@ -34,21 +34,21 @@ const Header : React.FC = () => {
                 >
                     <ul className='flex flex-col gap-12 items-center'>
                         <li>
-                            <a className='hover:text-bg_color font-merriweather font-bold text-4xl'
+                            <a className='hover:text-bg_color font-bold text-4xl'
                                 href='#projects' onClick={toggleMenu}
                             >
                                 Projects
                             </a>
                         </li>
                         <li>
-                            <a className='hover:text-bg_color font-merriweather font-bold text-4xl'
+                            <a className='hover:text-bg_color font-bold text-4xl'
                                 href='#about' onClick={toggleMenu}
                             >
                                 About Me
                             </a>
                         </li>
                         <li>
-                            <a className='hover:text-bg_color font-merriweather font-bold text-4xl'
+                            <a className='hover:text-bg_color font-bold text-4xl'
                                 href='#contact' onClick={toggleMenu}
                                 >
                                 Contact

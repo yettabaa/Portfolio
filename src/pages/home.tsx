@@ -9,12 +9,12 @@ import About from './about';
 const Home : React.FC = () => {
     return (
         <>
-            <div className='flex flex-col gap-12 items-center max-w-6xl m-auto p-4 sm:p-8  bg-slate-400'>
-                <Header />
+            <Header />
+            <div className='flex flex-col gap-12 items-center max-w-6xl m-auto p-4 sm:p-8'>
                 <div className='h-screen flex flex-col items-center pt-[18vh] sm:pt-[25vh] gap-10 z-0'>
                     <div className='flex flex-col items-center '>
-                        <div className='text-4xl font-bold font-merriweather'>Yassin Ettabaa</div>
-                        <div className='text-4xl font-medium font-merriweather text-_green'>
+                        <div className='text-4xl font-bold'>Yassin Ettabaa</div>
+                        <div className='text-4xl font-medium text-_green'>
                                 Software Engineer
                         </div>
                     </div>
