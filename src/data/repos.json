@@ -2,7 +2,7 @@
     {
       "id": 1,
       "name": "volunteer-travel",
-      "description": "A simple project using Next.js",
+      "description": "A platform connecting tourists with local guides in the Gulf Sahara region. with user authentication, profiles, real-time chat and secure payments. Technologies used: Docker, Angular, Express.js, MongoDB and RESTful ​API.",
       "html_url": "",
       "language": "TypeScript",
       "languages_url": "https://api.github.com/repos/yettabaa/volunteer-travel/languages",
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "name": "A-House-Guru",
-      "description": "A simple project using Next.js",
+      "description": "A platform connecting homeowners with skilled professionals, featuring user authentication, profiles, real-time chat and secure payments. Technologies used: Next.js, Express.js, MongoDB, GraphQL, Firebase and Matching algorithms.",
       "html_url": "",
       "language": "TypeScript",
       "languages_url": "https://api.github.com/repos/yettabaa/hgafii-front/languages",
