@@ -33,6 +33,7 @@ const languagesColors : any= {
     'Shell': '#89e051',
     'C': '#555555',
     'Roff': '#ecdebe',
+    'SCSS': '#c6538c',
 }
 
 // let _set = new Set<string>();
