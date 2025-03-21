@@ -5,7 +5,7 @@ import privateRepos from '../data/repos.json';
 
 const Projects : React.FC = () => {
     const [repos, setRepos] = useState<Repo[]>([]);
-    const [showMore, setShowMore] = useState<Boolean>(false);
+    const [showMore, setShowMore] = useState<boolean>(false);
     const orderedWebProjects : string[] = [
         'A-House-Guru',
         'volunteer-travel',
