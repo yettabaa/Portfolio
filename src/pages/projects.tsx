@@ -61,10 +61,14 @@ const Projects : React.FC = () => {
 
     return (
         <>
-            <div id='projects' className='flex flex-col gap-10'>
-                <span className='font-bold text-4xl py-16 text-_green '>
+            <div id='projects' className='flex flex-col'>
+                <span className='font-bold text-4xl text-center py-20 text-_green m-auto '>
                     Web Projects
+                    <p className='text-lg font-medium'>
+                        ( hover over any project to learn more ! )
+                    </p>
                 </span>
+                
                 {error ? 
                     <span className='font-medium text-xl text-red-500'>
                         An error occured while fetching the projects
@@ -75,7 +79,7 @@ const Projects : React.FC = () => {
                     </>
                 }
                 
-                <span className='font-bold text-4xl py-16 text-_green '>
+                <span className='font-bold text-4xl py-20 text-_green m-auto'>
                     Other Projects
                 </span>
                 {error ? 
@@ -84,7 +88,7 @@ const Projects : React.FC = () => {
                     </span> :
                     <>
                         <ProjectContainer repos={otherProjects}/>
-                        <span className='font-medium text-xl cursor-pointer' 
+                        <span className='font-medium text-xl cursor-pointer py-10' 
                         onClick={() => setShowMore(!showMore)}
                         >
     	    	        	{showMore ? 'Show less' : 'Show more ...'}

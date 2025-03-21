@@ -22,7 +22,11 @@ export default {
         bg: '#020307',
         _green: '#01D5A2',
         footer: '#000B08',
-      }
+      },
+      fontColor: {
+        _green: '#01D5A2',
+
+      },
     },
   },
   plugins: [],
