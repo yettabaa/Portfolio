@@ -3,7 +3,7 @@ import github from '../assets/github.svg';
 import instagram from '../assets/instagram.svg';
 import React, { useState } from 'react';
 
-const footer = () => {
+const footer : React.FC = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [emailError, setEmailError] = useState(false);
 
@@ -45,7 +45,7 @@ const footer = () => {
     };
     return (
 
-    <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm w-full mt-32 p-8 items-center flex flex-col">
+    <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm w-full p-8 mt-8 items-center flex flex-col">
         <div className='flex flex-col sm:flex-row gap-16 max-w-6xl'>
             <div className='p-1 flex flex-col items-center gap-8 w-full sm:w-[50%]'>
                 <p className="font-bold text-4xl text-_green mr-auto "
