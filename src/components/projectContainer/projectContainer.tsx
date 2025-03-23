@@ -43,7 +43,14 @@ const ProjectContainer  : React.FC<ProjectContainerProps> = ({repos, showMore=fa
                     <div key={repo.id} className={`sm:w-[46%] shadow-lg shadow-gray-600/50 relative group flex flex-col  justify-center gap-4 rounded-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2 ${showMore ? 'items-center h-64' : ''}`}>
                         {
                             gifs[repo?.name] ? 
-                            <img src={gifs[repo.name]} alt={repo.name} className=" h-72 w-auto" />
+                            <img 
+                                src={gifs[repo.name]} 
+                                alt={repo.name}
+                                width={1900}
+                                height={960} 
+                                loading="lazy"
+                                className=" h-72 w-auto" 
+                            />
                             :
                             <span className='font-bold text-3xl text-_green text-center'>
                                 {repo.name}

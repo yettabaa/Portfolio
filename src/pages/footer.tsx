@@ -57,17 +57,17 @@ const footer : React.FC = () => {
                     <ul className="flex justify-center gap-[20vw] sm:gap-[6vw]">
                         <li>
                             <a href="https://github.com/yettabaa" target="_blank" rel="noopener noreferrer">
-                                <img src={github} alt="github" className="h-8 w-auto" />
+                                <img src={github} alt="github" width={24} height={24} loading="lazy" className="h-8 w-auto" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/yassin-ettabaa/" target="_blank" rel="noopener noreferrer">
-                                <img src={linkedin} alt="linkedin" className="h-8 w-auto" />
+                                <img src={linkedin} alt="linkedin" width={24} height={24} loading="lazy" className="h-8 w-auto" />
                             </a>
                         </li>
                         <li>
                             <a href="https://www.instagram.com/yassin_.te/" target="_blank" rel="noopener noreferrer">
-                                <img src={instagram} alt="instagram" className="h-8 w-auto" />
+                                <img src={instagram} alt="instagram" width={24} height={24} loading="lazy" className="h-8 w-auto" />
                             </a>
                         </li>
                     </ul>

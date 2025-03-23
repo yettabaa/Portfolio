@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /sitemap.xml
+
+User-agent: Googlebot
+Allow: /sitemap.xml
+
+Sitemap: https://www.yettabaa.me/sitemap.xml

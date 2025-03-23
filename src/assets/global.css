@@ -6,7 +6,10 @@
 	--bg-color: #020307;
     --my-green: #01D5A2;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+}
 body {
     background-color: var(--bg-color);
     margin: 0;
