@@ -1,0 +1,11 @@
+{
+    "routes": [
+        {
+            "src": "/sitemap.xml",
+            "headers": {
+              "Cache-Control": "no-store"
+            },
+            "status": 403
+        }
+    ]
+}
