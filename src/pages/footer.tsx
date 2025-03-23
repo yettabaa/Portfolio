@@ -45,73 +45,74 @@ const footer : React.FC = () => {
     };
     return (
 
-    <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm w-full p-8 mt-8 items-center flex flex-col">
-        <div className='flex flex-col sm:flex-row gap-16 max-w-6xl'>
-            <div className='p-1 flex flex-col items-center gap-8 w-full sm:w-[50%]'>
-                <p className="font-bold text-4xl text-_green mr-auto "
-                    >Contact Me</p>
-                <p className="text-lg font-medium" >
-                    I’m always open to connecting, whether it’s to collaborate on exciting projects, share knowledge, or discuss industry trends. If you’re interested in working together or just want to say hello, feel free to reach out through any of the following channels.
-                </p>
-                <ul className="flex justify-center gap-[20vw] sm:gap-[6vw]">
-                    <li>
-                        <a href="https://github.com/yettabaa" target="_blank" rel="noopener noreferrer">
-                            <img src={github} alt="github" className="h-8 w-auto" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/yassin-ettabaa/" target="_blank" rel="noopener noreferrer">
-                            <img src={linkedin} alt="linkedin" className="h-8 w-auto" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/yassin_.te/" target="_blank" rel="noopener noreferrer">
-                            <img src={instagram} alt="instagram" className="h-8 w-auto" />
-                        </a>
-                    </li>
-                </ul>
+        <footer id='contact' className="py-8 border-[2px] border-_green rounded-sm w-full p-8 mt-8 items-center flex flex-col">
+            <div className='flex flex-col sm:flex-row gap-16 max-w-6xl'>
+                <div className='p-1 flex flex-col items-center gap-8 w-full sm:w-[50%]'>
+                    <h2 className="font-bold text-4xl text-_green mr-auto "
+                        >Contact Me
+                    </h2>
+                    <p className="text-lg font-medium" >
+                        I’m always open to connecting, whether it’s to collaborate on exciting projects, share knowledge, or discuss industry trends. If you’re interested in working together or just want to say hello, feel free to reach out through any of the following channels.
+                    </p>
+                    <ul className="flex justify-center gap-[20vw] sm:gap-[6vw]">
+                        <li>
+                            <a href="https://github.com/yettabaa" target="_blank" rel="noopener noreferrer">
+                                <img src={github} alt="github" className="h-8 w-auto" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/yassin-ettabaa/" target="_blank" rel="noopener noreferrer">
+                                <img src={linkedin} alt="linkedin" className="h-8 w-auto" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/yassin_.te/" target="_blank" rel="noopener noreferrer">
+                                <img src={instagram} alt="instagram" className="h-8 w-auto" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <form className="flex flex-col items-center w-full gap-4 sm:mt-20"
+                        onSubmit={handleSubmit}  
+                >
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="p-2 border-2 border-_green rounded-md bg-gray-800 text-wh w-full"
+                        />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className={`p-2 border-2 rounded-md bg-gray-800 w-full ${
+                            emailError ? "border-red-500" : "border-_green"} `}
+                        required
+                        />
+                    <textarea
+                        name="message"
+                        placeholder="Message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="p-2 border-2 h-40 rounded-md border-_green bg-gray-800 w-full"
+                        required
+                        ></textarea>
+                    <button
+                        type="submit"
+                        className="w-40 bg-_green font-bold text-xl py-2 px-4 mr-auto rounded-md hover:bg-green-600"
+                        >
+                        Send
+                    </button>
+                </form>
             </div>
-            <form className="flex flex-col items-center w-full gap-4 sm:mt-20"
-                    onSubmit={handleSubmit}  
-            >
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="p-2 border-2 border-_green rounded-md bg-gray-800 text-wh w-full"
-                    />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`p-2 border-2 rounded-md bg-gray-800 w-full ${
-                        emailError ? "border-red-500" : "border-_green"} `}
-                    required
-                    />
-                <textarea
-                    name="message"
-                    placeholder="Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="p-2 border-2 h-40 rounded-md border-_green bg-gray-800 w-full"
-                    required
-                    ></textarea>
-                <button
-                    type="submit"
-                    className="w-40 bg-_green font-bold text-xl py-2 px-4 mr-auto rounded-md hover:bg-green-600"
-                    >
-                    Send
-                </button>
-            </form>
-        </div>
-        <p className="text-center text-sm pt-8">
-            &copy; {new Date().getFullYear()} Ettabaa Yassin. All rights reserved.
-        </p>
-    </footer>
+            <p className="text-center text-sm pt-8">
+                &copy; {new Date().getFullYear()} Ettabaa Yassin. All rights reserved.
+            </p>
+        </footer>
     );
 };
 

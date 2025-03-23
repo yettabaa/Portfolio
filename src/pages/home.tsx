@@ -15,10 +15,10 @@ const Home : React.FC = () => {
 
                 <div className='h-screen flex flex-col items-center pt-[18vh] sm:pt-[25vh] gap-10 z-0'>
                     <div className='flex flex-col items-center '>
-                        <div className='text-4xl font-bold'>Yassin Ettabaa</div>
-                        <div className='text-4xl font-medium text-_green'>
+                        <h1 className='text-4xl font-bold'>Yassin Ettabaa</h1>
+                        <h2 className='text-4xl font-medium text-_green'>
                                 Software Engineer
-                        </div>
+                        </h2>
                     </div>
                     <div className='border-splide-500 border-2 border-_green rounded-full p-2 z-10'>
                         <img src={picture} alt = 'Yettabaa' className='h-60 w-auto rounded-full' />

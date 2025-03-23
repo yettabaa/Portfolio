@@ -50,9 +50,9 @@ const ProjectContainer  : React.FC<ProjectContainerProps> = ({repos, showMore=fa
                             </span>
                         }
                         <div className={`absolute p-2 inset-0 bg-slate-500 bg-opacity-70  flex flex-col gap-2 overflow-auto opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ${showMore ? 'h-64' : 'h-72 '}`}>
-                            <span className='text-center font-bold text-xl text-_green'>
+                            <h2 className='text-center font-bold text-xl text-_green'>
                                 {repo.name}
-                            </span>
+                            </h2>
                             <p className="font-bold text-sm mb-2 text-center">
                                 {repo.description || "No description available"}
                             </p>
