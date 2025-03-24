@@ -1,13 +1,13 @@
 import React from 'react';
-import FdF from '../../assets/FdF-Scale-Z.gif';
-import cub3D from '../../assets/cub3D_1.gif';
-import inception from '../../assets/schema.png';
-import bacNote from '../../assets/Bac-Note-Calculator.gif';
-import transc from '../../assets/ft_transcendence2.png';
-import http from '../../assets/http.jpeg';
-import AHouseGuru from '../../assets/A-House-Guru.png';
-import volenteer from '../../assets/volunteer-travel.png';
-import LanguagesBox from '../languagesBox/languagesBox';
+import FdF from '../assets/FdF-Scale-Z.gif';
+import cub3D from '../assets/cub3D_1.gif';
+import inception from '../assets/schema.png';
+import bacNote from '../assets/Bac-Note-Calculator.gif';
+import transc from '../assets/ft_transcendence2.png';
+import http from '../assets/http.jpeg';
+import AHouseGuru from '../assets/A-House-Guru.png';
+import volenteer from '../assets/volunteer-travel.png';
+import LanguagesBox from './languagesBox';
 
 export interface Repo {
     id: number; // Assuming 'id' is a unique identifier

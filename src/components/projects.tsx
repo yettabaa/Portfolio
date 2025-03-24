@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProjectContainer, { Repo } from '../components/projectContainer/projectContainer';
+import ProjectContainer, { Repo } from './projectContainer';
 import axios from 'axios';
 import privateRepos from '../data/repos.json';
 

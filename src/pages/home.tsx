@@ -1,11 +1,11 @@
 import React from 'react';
 import union from '../assets/union.svg';
 import picture from '../assets/yettabaa.jpg';
-import Header from './header';
-import Footer from './footer';
-import Projects from './projects';
-import About from './about';
-import Skills from './skills';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import Projects from '../components/projects';
+import About from '../components/about';
+import Skills from '../components/skills';
 
 const Home : React.FC = () => {
     return (
