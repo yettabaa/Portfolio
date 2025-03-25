@@ -16,9 +16,9 @@ const Home : React.FC = () => {
                 <div className='h-screen flex flex-col items-center pt-[18vh] sm:pt-[25vh] gap-10 z-0'>
                     <div className='flex flex-col items-center '>
                         <h1 className='text-4xl font-bold text-center'>Yassin Ettabaa
-                            <h2 className='text-4xl font-medium text-_green'>
+                            <p className='text-4xl font-medium text-_green'>
                                     Software Engineer
-                            </h2>
+                            </p>
                         </h1>
                     </div>
                     <div className='border-splide-500 border-2 border-_green rounded-full p-2 z-10'>

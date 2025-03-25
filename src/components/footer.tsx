@@ -25,7 +25,7 @@ const footer : React.FC = () => {
         }
     
         try {
-            const response = await fetch("https://formsubmit.co/9fd25ace48441795df46ec0ecb5c9936", {
+            const response = await fetch(import.meta.env.VITE_FORMSUBMIT, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
